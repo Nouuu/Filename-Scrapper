@@ -144,4 +144,5 @@ void logInFile(char *logFileName, char *message) {
 
     printf("[%s] %s\n", buff, message);
     fprintf(fp, "[%s] %s\n", buff, message);
+    fclose(fp);
 }

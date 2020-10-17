@@ -20,7 +20,7 @@ int main() {
 
     if (!directoryExist(path)) {
         char *message = malloc(sizeof(char) * (strlen(path) + 20 + 1));
-        sprintf(message,"Wrong directory : \"%s\"",path);
+        sprintf(message, "Wrong directory : \"%s\"", path);
 
         logIt(message);
         free(message);
@@ -37,10 +37,12 @@ int main() {
 
     readDirectory(path, level, fp);
 
+    fclose(fp);
+
     return endFunc(0, path);
 }
 
-void logIt(char *message){
+void logIt(char *message) {
     logInFile(logFilename, message);
 }
 
